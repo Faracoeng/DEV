@@ -8,16 +8,36 @@ const express = require('express'); // require é para importar uma dependência
 const app = express();
 
 //app.get(rota de acesso ao conteudo, (req, res){});
-//req é um parametro que possui uma requisição, res é a resposta associada a esta requisição, 
-// por exemplo solicitar o preço de um produto em req, e responder o preço em res 
+//req é um parametro que possui uma requisição, ou seja, possui todas as infomações
+// que o usuário esta enviando, res é a resposta associada a esta requisição, 
+// por exemplo o usuario envia o carrinho de compras dele no req, neste caso o usuário seria o navegador, 
+// em res responde-se o desejado ao usuário.  
 
-//Neste caso, utilizando '/' como rota de acesso ao conteúdo, é como se fosse uma
+// Neste caso, utilizando '/' como rota de acesso ao conteúdo, é como se fosse uma
 // requisição na capa do projeto, poderia ser em '/outraPastaNoProjeto/conteúdoDeResposta'
+
+// Métodos: GET, POST, PUT, DELETE (Mais importantes dentro de uma API Rest)
+
+//GET: Buscar informação do Backend
+//POST: Criar nova informação no Backend
+//PUT: Editar informação no Backend
+//DELETE: Deletar informação do Backend
+
+// OBS: Rotas do tipo POST, nao da pra executar pelo navegador, pois ele so executa GET
+// é necessario utilizar outra ferramenta para testar todos os métodos
+//Utilizar: insomnia (insomnia.rest)
+
+//Rota do tipo POST
 app.get('/', (req, res) => {
 
-    return res.send("inserir qualquer texto de resposta") // é o método mais simples de reposta
+    // return res.send("Olá Mundo")  --->   // é o método mais simples de reposta
+
+    // Como este projeto visa desenvolver uma API REST, não se entrega um texto 
+    // Pronto e sim uma estrutura de dados, neste caso utilizaremos json
+    //Abaixo a forma correta e estruturada de enviar a frase
+    return res.json({message: "Olá Mundo"});
 });
 
 // Iniciar aplicação na porta 3333, apnas como teste
 // Da pra acessar aplicação através de (localhost:3333), em um navegador por exemplo
-app.listen(3333);
+app.listen(3334);
