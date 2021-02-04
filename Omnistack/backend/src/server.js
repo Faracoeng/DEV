@@ -28,7 +28,7 @@ const app = express();
 //Utilizar: insomnia (insomnia.rest)
 
 //Rota do tipo POST
-app.get('/', (req, res) => {
+app.get('/usuarios', (req, res) => {
 
     // return res.send("Olá Mundo")  --->   // é o método mais simples de reposta
 
