@@ -38,6 +38,12 @@ app.get('/', (req, res) => { //Função esta no formato "Arrow Function"
     return res.json({message: "Olá Mundo"});
 });
 
+// Teste de parâmetros Query (http://URL/rota?filtrodeseja).
+// Por exemplo para filtra usuario com idade de 20 anos ficaria:
+// https://dominio.com.br/usuario?idade=20
+
+
+
 app.post('/usuarios', (req,res) =>{
     return res.json({message: "Olá Mundo"});
 
