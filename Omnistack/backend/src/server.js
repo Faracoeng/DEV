@@ -28,7 +28,7 @@ const app = express();
 //Utilizar: insomnia (insomnia.rest)
 
 //Rota do tipo POST
-app.get('/usuarios', (req, res) => {
+app.get('/', (req, res) => { //Função esta no formato "Arrow Function"
 
     // return res.send("Olá Mundo")  --->   // é o método mais simples de reposta
 
@@ -36,6 +36,11 @@ app.get('/usuarios', (req, res) => {
     // Pronto e sim uma estrutura de dados, neste caso utilizaremos json
     //Abaixo a forma correta e estruturada de enviar a frase
     return res.json({message: "Olá Mundo"});
+});
+
+app.post('/usuarios', (req,res) =>{
+    return res.json({message: "Olá Mundo"});
+
 });
 
 // Iniciar aplicação na porta 3333, apnas como teste
