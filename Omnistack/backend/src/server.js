@@ -20,6 +20,9 @@ const express = require('express'); // require é para importar uma dependência
 //Criar aplicação, pode ser constante denovo, express() é uma função
 
 const app = express();
+//express() por padrão não utiliza JSON, o trecho abaixo é como se fosse um plugin,
+//que serve para ele interpretar JSON e entregar nas requisições
+app.use(express.json());
 
 //app.get(rota de acesso ao conteudo, (req, res){});
 //req é um parametro que possui uma requisição, ou seja, possui todas as infomações
@@ -52,15 +55,26 @@ app.get('/', (req, res) => { //Função esta no formato "Arrow Function"
 
 ////Rota do tipo POST
 app.post('/usuarios', (req,res) =>{
-    return res.json({message: "Hello World"});
+    // return res.json({message: "Hello World"});    ---> só pra teste
 
+    // Montando o Corpo da requisição [Body] (JSON):
+    // Colocar este trecho no insomnia ou postmen
+
+// ---------------------------------------------------------------
+// {
+//    "nome": "Fulano",
+//    "email": "fulano@dominiodofulano.com"
+// }
+// ---------------------------------------------------------------
+    return res.json(req.body);   // req.body acessa o corpo da requisição (criação/edição)
+                                // Pode retornar ele direto porque ja é um JSON
 });
 
 
 // Editar ou deletar uma informação (PUT/DELETE):
 
 //É NECESSÁRIO FILTRAR A BUSCA PELA INFORMAÇÃO QUE SE DESEJA EDITAR OU DELETAR:
-// Acessando usuario com id=1 por exemplo: (http://dominiodoprojeto.com.br/usuario/1)
+// Encaminhando usuario com id=1 por exemplo: (http://dominiodoprojeto.com.br/usuario/1)
 
 //Pegando o parametro no Server (PUT):
 
@@ -69,6 +83,7 @@ app.put('/usuarios/:id', (req, res) => {
     return res.json({id: req.params.id});  //req.params acessa route params, para (PUT e DELETE)
 
 });
+
 
 
 // Iniciar aplicação na porta 3333, apnas como teste
