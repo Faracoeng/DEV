@@ -56,6 +56,21 @@ app.post('/usuarios', (req,res) =>{
 
 });
 
+
+// Editar ou deletar uma informação (PUT/DELETE):
+
+//É NECESSÁRIO FILTRAR A BUSCA PELA INFORMAÇÃO QUE SE DESEJA EDITAR OU DELETAR:
+// Acessando usuario com id=1 por exemplo: (http://dominiodoprojeto.com.br/usuario/1)
+
+//Pegando o parametro no Server (PUT):
+
+app.put('/usuarios/:id', (req, res) => {
+
+    return res.json({id: req.params.id});  //req.params acessa route params, para (PUT e DELETE)
+
+});
+
+
 // Iniciar aplicação na porta 3333, apnas como teste
 // Da pra acessar aplicação através de (localhost:3333), em um navegador por exemplo
 app.listen(3334);
