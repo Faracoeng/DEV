@@ -3,6 +3,20 @@
 //Primeiro importar o express, pode ser uma constante
 const express = require('express'); // require é para importar uma dependência externa
 
+// -------------------------------------------------------------------------------------------------------------------
+// Métodos: GET, POST, PUT, DELETE (Mais importantes dentro de uma API Rest)
+
+//GET: Buscar informação do Backend
+//POST: Criar nova informação no Backend
+//PUT: Editar informação no Backend
+//DELETE: Deletar informação do Backend
+
+// OBS: Rotas do tipo POST, nao da pra executar pelo navegador, pois ele so executa GET
+// é necessario utilizar outra ferramenta para testar todos os métodos
+//Utilizar: insomnia (insomnia.rest)
+
+// -------------------------------------------------------------------------------------------------------------------
+
 //Criar aplicação, pode ser constante denovo, express() é uma função
 
 const app = express();
@@ -16,18 +30,7 @@ const app = express();
 // Neste caso, utilizando '/' como rota de acesso ao conteúdo, é como se fosse uma
 // requisição na capa do projeto, poderia ser em '/outraPastaNoProjeto/conteúdoDeResposta'
 
-// Métodos: GET, POST, PUT, DELETE (Mais importantes dentro de uma API Rest)
-
-//GET: Buscar informação do Backend
-//POST: Criar nova informação no Backend
-//PUT: Editar informação no Backend
-//DELETE: Deletar informação do Backend
-
-// OBS: Rotas do tipo POST, nao da pra executar pelo navegador, pois ele so executa GET
-// é necessario utilizar outra ferramenta para testar todos os métodos
-//Utilizar: insomnia (insomnia.rest)
-
-//Rota do tipo POST
+//Rota do tipo GET
 app.get('/', (req, res) => { //Função esta no formato "Arrow Function"
 
     // return res.send("Olá Mundo")  --->   // é o método mais simples de reposta
@@ -35,17 +38,21 @@ app.get('/', (req, res) => { //Função esta no formato "Arrow Function"
     // Como este projeto visa desenvolver uma API REST, não se entrega um texto 
     // Pronto e sim uma estrutura de dados, neste caso utilizaremos json
     //Abaixo a forma correta e estruturada de enviar a frase
-    return res.json({message: "Olá Mundo"});
+    
+    // return res.json({message: "Olá Mundo"});
+
+    // Teste de parâmetros Query na rota GET (http://URL/rota?filtrodeseja).
+    // Por exemplo para filtra usuario com idade de 20 anos ficaria:
+    // http://dominiodoprojeto.com.br/usuario?idade=20
+
+    // Para acessar esta requisição filtrada basta fazer:
+    // return res.json({idade: req.query.idade}) //req.query acessa os parametro query enviado pelo navegador/cliente
+
 });
 
-// Teste de parâmetros Query (http://URL/rota?filtrodeseja).
-// Por exemplo para filtra usuario com idade de 20 anos ficaria:
-// https://dominio.com.br/usuario?idade=20
-
-
-
+////Rota do tipo POST
 app.post('/usuarios', (req,res) =>{
-    return res.json({message: "Olá Mundo"});
+    return res.json({message: "Hello World"});
 
 });
 
