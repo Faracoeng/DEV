@@ -2,12 +2,25 @@
 
 //Primeiro importar o express, pode ser uma constante
 const express = require('express'); // require é para importar uma dependência externa
-
 // Importanto as rotas de rotas.js
 // é bom colocar o caminho relativo "./"
 const routes = require('./rotas.js');
+// Importar mongoose
+const mongoose = require('mongoose');
 
 const app = express();
+
+// Conectar com a url do BCD
+// URL FORNECIDA NO CONNECT DO MONGODBATLAS: mongodb+srv://andre_db:<password>@cluster0.qpahl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+// É NECESSÁRIO AJUSTAR USUARIO E SENHA CRIADOS NO USUÁRIO DO BCD NO MONGODB
+mongoose.connect('mongodb+srv://andre_db:andre_db@cluster0.qpahl.mongodb.net/andre_Database?retryWrites=true&w=majority',{
+    // Encaminhar objeto como parametro
+    // Não tem problema se nao colocar, é só para corrigir um aviso
+    useNewUrlParser : true,
+    useUnifiedTopology: true,
+});
+
+
 //express() por padrão não utiliza JSON, o trecho abaixo é como se fosse um plugin,
 // que serve para ele interpretar JSON e entregar nas requisições
 app.use(express.json());
@@ -16,6 +29,14 @@ app.use(routes);
 // Iniciar aplicação na porta 3333, apnas como teste
 // Da pra acessar aplicação através de (localhost:3333), em um navegador por exemplo
 app.listen(3334);
+
+
+
+
+
+
+
+
 
 
 
