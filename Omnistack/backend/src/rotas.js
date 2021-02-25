@@ -1,4 +1,4 @@
-// ESte arquivos serve para colocar as rotas do projeto, para naos
+// Estes arquivos serve para colocar as rotas do projeto, para naos
 // acumular tudo em server.js
 
 // Importar novamente o express

@@ -3,6 +3,16 @@
 //Primeiro importar o express, pode ser uma constante
 const express = require('express'); // require é para importar uma dependência externa
 
+// Importanto as rotas de rotas.js
+// é bom colocar o caminho relativo "./"
+const routes = require('./rotas.js');
+
+const app = express();
+//express() por padrão não utiliza JSON, o trecho abaixo é como se fosse um plugin,
+// que serve para ele interpretar JSON e entregar nas requisições
+app.use(express.json());
+app.use(routes);
+
 // Iniciar aplicação na porta 3333, apnas como teste
 // Da pra acessar aplicação através de (localhost:3333), em um navegador por exemplo
 app.listen(3334);
@@ -28,10 +38,6 @@ app.listen(3334);
 
 //Criar aplicação, pode ser uma constante denovo, express() é uma função
 
-//const app = express();
-//express() por padrão não utiliza JSON, o trecho abaixo é como se fosse um plugin,
-//que serve para ele interpretar JSON e entregar nas requisições
-//app.use(express.json());
 
 //app.get(rota de acesso ao conteudo, (req, res){});
 //req é um parametro que possui uma requisição, ou seja, possui todas as infomações
