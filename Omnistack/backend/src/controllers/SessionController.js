@@ -7,5 +7,7 @@
 
 // exportar um objeto
 module.exports = {
-    
+  store(req,res) {
+      return res.json({message: 'Hello World (Session controller)'})
+  } 
 };
