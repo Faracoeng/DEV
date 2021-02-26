@@ -7,6 +7,7 @@ const express = require('express');
 
 //Importando o Controller
 const SessionController = require('./controllers/SessionController');
+const SpotController = require('./controllers/SpotController');
 
 // Router() é uma funcionalidade do express responsável por tratar as rotas
 // a variavel "routes" agora possui todos os metodos de rotas do http
@@ -21,6 +22,9 @@ const routes = express.Router();
 
 // MIGRANDO A ROTA QUE ESTAVA NO server.js
 routes.post('/sessions',(SessionController.store));
+//Rota do spot
+routes.post('/spot',(SpotController.store));
+
 
 // É necessario exportar as rotas deste arquivo para a 
 // aplicação ter conhecimento da existencia delas
