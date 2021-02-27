@@ -4,14 +4,18 @@
 // Importar novamente o express
 const { Router } = require('express');
 const express = require('express');
+//Para receber o upload da imagem, importar o multer
+const multer = require('multer');
+const uploadConfig = require('./config/upload'); 
 
 //Importando o Controller
 const SessionController = require('./controllers/SessionController');
 const SpotController = require('./controllers/SpotController');
-
+const DashboardController = require('./controllers/DashboardController');
 // Router() é uma funcionalidade do express responsável por tratar as rotas
 // a variavel "routes" agora possui todos os metodos de rotas do http
 const routes = express.Router();
+const upload = multer(uploadConfig);
 
 // Inicialmente o usuário deverá se logar, a primeira rota a ser criada é criar o usuario que for informado no DB:
 // Criado MVC dentro de SRC
@@ -23,7 +27,14 @@ const routes = express.Router();
 // MIGRANDO A ROTA QUE ESTAVA NO server.js
 routes.post('/sessions',(SessionController.store));
 //Rota do spot
-routes.post('/spot',(SpotController.store));
+routes.post('/spot',(upload.single('thumbnail'),SpotController.store));
+// Rota de listagem de spots
+routes.get('/spot',(SpotController.index));
+//Rota de listagem de spots do usuário logado
+routes.get('/dashboard',(DashboardController.show));
+
+
+
 
 
 // É necessario exportar as rotas deste arquivo para a 
