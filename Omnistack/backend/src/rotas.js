@@ -12,6 +12,7 @@ const uploadConfig = require('./config/upload');
 const SessionController = require('./controllers/SessionController');
 const SpotController = require('./controllers/SpotController');
 const DashboardController = require('./controllers/DashboardController');
+const BookingController = require('./controllers/RegistrosController')
 // Router() é uma funcionalidade do express responsável por tratar as rotas
 // a variavel "routes" agora possui todos os metodos de rotas do http
 const routes = express.Router();
@@ -32,6 +33,8 @@ routes.post('/spot',(upload.single('thumbnail'),SpotController.store));
 routes.get('/spot',(SpotController.index));
 //Rota de listagem de spots do usuário logado
 routes.get('/dashboard',(DashboardController.show));
+//Criando uma rota encadeada
+routes.post('/spots/:spot_id/registros', RegistrosController.store);
 
 
 
