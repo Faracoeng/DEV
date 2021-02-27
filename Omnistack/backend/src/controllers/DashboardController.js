@@ -1,10 +1,11 @@
-const Spot = require('../models/SpotSp');
+const Spot = require('../models/Spot');
 
 module.exports = {
     //Listagem dos SPOTS do usuário criado
-    show(req,res){
+    async show(req,res){
         const user_id = req.headers.user_id;
 
         const spots = await Spot.find({user: user_id});
+        return res.json(spots);
     }
 }
