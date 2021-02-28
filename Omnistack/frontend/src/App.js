@@ -1,11 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'; //SEmpre tem que importar React
+import './App.css'; // Impota um arq.cc e automaticamente integra CSS com HTML
 
+
+// Componente é uma função em JS que retorna um HTML
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
