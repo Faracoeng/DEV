@@ -29,7 +29,8 @@ function App() {
               id="email" 
               placeholder="Digite seu email"
             /> 
-            <button type="submit">Entrar</button>
+            
+            <button className="btn" type="submit">Entrar</button>
           </form>  
         </div>
     </div>
