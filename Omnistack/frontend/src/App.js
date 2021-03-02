@@ -10,10 +10,28 @@ import logo from './assets/logo.svg';
 // Este componente se chama APP() que é importado em index.js
 function App() {
   return (
+    // Uma caixinha na tela, escrita em HTML dentro do códifgo em JavaScript
+    // isso é possivel graças ao React, porém, as funções em HTML mudam, pois o 
+    // JavaScript possui palavras reservadas, observamos abaixo as alterações em 
+    // "for" para "htmlFor" ou "class" para className
+
     <div className="container">
         <img src={logo} alt="Valhalla"/>
 
-        
+        <div className="content">
+          <p>
+            Aqui <strong>escrevo</strong> o que eu quiser.
+          </p>  
+          <form>
+            <label htmlFor="email">E-MAIL *</label>
+            <input 
+              type="email" 
+              id="email" 
+              placeholder="Digite seu email"
+            /> 
+            <button type="submit">Entrar</button>
+          </form>  
+        </div>
     </div>
   );
 }
