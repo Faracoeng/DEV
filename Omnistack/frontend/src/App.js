@@ -34,6 +34,7 @@ function App() {
   function hundleSubmit (evento){
     console.log('Apareceu no inspecionar(F12) do navegador?');
     evento.preventDefault();
+    console.log(email);
   }
   return (
     // Uma caixinha na tela, escrita em HTML dentro do códifgo em JavaScript
@@ -62,6 +63,8 @@ function App() {
               type="email" 
               id="email" 
               placeholder="Digite seu email"
+              value={email}
+              onChange ={evento => setEmail(evento.target.value)}
             /> 
             
             <button className="btn" type="submit">Entrar</button>
