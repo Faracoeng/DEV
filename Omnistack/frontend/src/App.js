@@ -1,4 +1,9 @@
-import React from 'react'; //SEmpre tem que importar React
+// Toda infomação que é manipulada em um componente é mantida no ESTADO do componente
+// Conceito importante
+// Importar junto com o React o useState Que vai ser responsável por criar ESTADOS dentro d aplicação
+
+import React, {useState} from 'react'; //Sempre tem que importar React
+
 //Importar a api criada dentro de src/services/api.js
 import api from './services/api';
 import './App.css'; // Impota um arq.cc e automaticamente integra CSS com HTML
@@ -12,6 +17,12 @@ import logo from './assets/logo.svg';
 // Este componente se chama APP() que é importado em index.js
 
 function App() {
+  // useState retorna duas funções 'email' e 'setEmail'
+  // Função funciona em tempo real, email contem o conteudo
+  // dentro de "useState('')", toda a vez que a informação for atualizada
+  // "email" vai estar atualizado, quem atualiza é "setEmail"
+
+  const [email, setEmail] = useState('');
 
   // Criando uma função dentro de outra
   // hundleSubmit sera enviada como valor
