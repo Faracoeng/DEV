@@ -31,11 +31,13 @@ function App() {
   // OBS: Para inbutir funções JavaScript no código HTML
   // é necessario utilizar chaves:
   // "form onSubmit = {hundleSubmit}"
-  function hundleSubmit (evento){
+
+  // Necessario tornar a funcao assincrona para receber o id do usuario que foi registrado no BCD
+  async function hundleSubmit (evento){
     //console.log('Apareceu no inspecionar(F12) do navegador?');
     evento.preventDefault(); // Para não recarregar a tela quando clicar no botão
     //console.log(email);
-    api.post('/sessao',{
+    const response = await api.post('/sessao',{
       email: email
     }) // Possui os metodos que se deseja utilizar no backend
   }

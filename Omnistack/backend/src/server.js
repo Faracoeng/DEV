@@ -2,6 +2,10 @@
 
 //Primeiro importar o express, pode ser uma constante
 const express = require('express'); // require é para importar uma dependência externa
+//Importando o CORS
+const cors = require('cors');
+
+
 // Importanto as rotas de rotas.js
 // é bom colocar o caminho relativo "./"
 const routes = require('./rotas.js');
@@ -20,7 +24,10 @@ mongoose.connect('mongodb+srv://andre_db:andre_db@cluster0.qpahl.mongodb.net/and
     useUnifiedTopology: true,
 });
 
-
+//Para ativar o cors e definir qual endereço pode acessar
+// exemplo: app.use(cors(origin: 'http://localhost:3334'));  //endereço local onde ta rodando a aplicação
+//Da forma como esta abaixo permite que qualquer aplicação consuma essa API
+app.use(cors());
 //express() por padrão não utiliza JSON, o trecho abaixo é como se fosse um plugin,
 // que serve para ele interpretar JSON e entregar nas requisições
 app.use(express.json());
