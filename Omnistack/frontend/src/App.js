@@ -32,9 +32,12 @@ function App() {
   // é necessario utilizar chaves:
   // "form onSubmit = {hundleSubmit}"
   function hundleSubmit (evento){
-    console.log('Apareceu no inspecionar(F12) do navegador?');
-    evento.preventDefault();
-    console.log(email);
+    //console.log('Apareceu no inspecionar(F12) do navegador?');
+    evento.preventDefault(); // Para não recarregar a tela quando clicar no botão
+    //console.log(email);
+    api.post('/sessao',{
+      email: email
+    }) // Possui os metodos que se deseja utilizar no backend
   }
   return (
     // Uma caixinha na tela, escrita em HTML dentro do códifgo em JavaScript
