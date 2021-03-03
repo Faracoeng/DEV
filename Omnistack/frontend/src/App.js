@@ -37,9 +37,21 @@ function App() {
     //console.log('Apareceu no inspecionar(F12) do navegador?');
     evento.preventDefault(); // Para não recarregar a tela quando clicar no botão
     //console.log(email);
-    const response = await api.post('/sessao',{
+    const resposta = await api.post('/sessions',{
       email: email
-    }) // Possui os metodos que se deseja utilizar no backend
+    }); // Possui os metodos que se deseja utilizar no backend
+    console.log(resposta);
+
+    // Dentro de resposta, no campo "data" vem o id do usuário na requisição
+    //Para pegar o id:
+    const idUsusario = resposta.data.id; // OU const {id} = resposta.data;
+    // Este id é utilizado para autenticar o usuário, necessario armazenar
+    // em um local onde toda a aplicação tenha conhecimento da existencia
+    //Armazenar em : "localStorage" que é um bcd dentro do navegador
+    console.log(idUsusario);
+    localStorage.setItem('user',idUsusario); // Agora esta salvo no navegador
+
+
   }
   return (
     // Uma caixinha na tela, escrita em HTML dentro do códifgo em JavaScript
