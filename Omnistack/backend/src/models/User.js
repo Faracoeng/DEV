@@ -1,4 +1,5 @@
-const mongoose = require('mongoose');
+
+const mongoose = require ('mongoose');
 
 // Define estrutura da entidade USER
 const UserSchema = new mongoose.Schema({
