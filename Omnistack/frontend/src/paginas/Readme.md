@@ -1,0 +1,1 @@
+> Estrutura de arquivo foi dividida em pastas, onde cada pasta é um componente, uma página diferente, podendo possuir sua própria estilização (css, imagens e tudo mais).
