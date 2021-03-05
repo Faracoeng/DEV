@@ -11,6 +11,10 @@ import React, {useEffect, useState} from 'react';
 //Imporar api
 import api from '../../services/api';
 
+//Importando o css da página
+import './styles.css';
+
+
 export default function Dashboard(){
 
     //Implementando estado do componente com uma lista vazia como parametro no useState
@@ -37,7 +41,7 @@ export default function Dashboard(){
             <ul className="Listagem">
                 {spots.map(spot => (
                     <li key={spot.id}>
-                        <header />
+                        <header style={{backgroundImage: `url(${spot.thumbnail_url})`}}/>
                         <strong> {spot.nomeEmpresa}</strong>
                         <spam> {spot.preco}</spam>               
 

@@ -1,0 +1,25 @@
+/* Ajustando a lista "Listagem" criada no ./index.js */
+ul.Listagem { 
+    width: 100%;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    margin-bottom: 30px; 
+
+}
+/* Ajustando cada item da lista agora */
+
+ul.Listagem li{
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ajustando agora o "header" que é um item específico da lista */
+
+ul.Listagem li{
+    width: 100%;
+    height: 120px;
+    background-size: cover;
+    border-radius: 4px;
+}
