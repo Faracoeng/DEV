@@ -23,3 +23,14 @@ ul.Listagem li{
     background-size: cover;
     border-radius: 4px;
 }
+
+ul.Listagem li strong {
+    margin-top: 10px;
+    font-size: 24px;
+    color: #444;
+}
+
+ul.Listagem li span {
+    font-size: 15px;
+    color: #999;
+}

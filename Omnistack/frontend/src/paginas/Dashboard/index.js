@@ -8,6 +8,10 @@
 // na função login src/paginas/Login/index.js 
 
 import React, {useEffect, useState} from 'react'; 
+// React fornece um comonente chamado link, que serve para criar links que
+// redirecionam para outra rota no site
+import {Link} from 'react-router-dom';
+
 //Imporar api
 import api from '../../services/api';
 
@@ -34,8 +38,12 @@ export default function Dashboard(){
         }
         carregarListagem();
     },[]);
+
     // Como vai retornar mais de um elemento
     //NECESSARIO UTILIZAR O FRAGMENTE (TAG VAZIA)
+    // spot.preco ? `R$${spot.preco}  --> Isso é o mesmo que fazer um if no HTML React permite isso
+    // Ou seja, se tiver preco, pega o preço do campo "spot.preco" senão escreve "Gratuito"
+    //No botão do link, foi importada a classe "btn" estilizada no App.css
     return (
         <>
             <ul className="Listagem">
@@ -43,13 +51,14 @@ export default function Dashboard(){
                     <li key={spot.id}>
                         <header style={{backgroundImage: `url(${spot.thumbnail_url})`}}/>
                         <strong> {spot.nomeEmpresa}</strong>
-                        <spam> {spot.preco}</spam>               
+                        <span> {spot.preco ? `R$${spot.preco}/dia` : 'Gratuito'}</span>               
 
                     </li>
-                ))}
-            
+                ))}     
             </ul>
-
+            <Link to="/criar">
+                <button className="btn">Cadastrar novo spot</button>                    
+            </Link>
         </>
     )
 
