@@ -2,7 +2,7 @@
 // Conceito importante
 // Importar junto com o React o useState Que vai ser responsável por criar ESTADOS dentro d aplicação
 
-import React, {useState} from 'react'; //Sempre tem que importar React
+import React from 'react'; //Sempre tem que importar React
 
 //Importar a api criada dentro de src/services/api.js
 import api from './services/api';
