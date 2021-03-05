@@ -16,6 +16,20 @@ const SpotSchema = new mongoose.Schema({
         ref: 'User'
     }
 
-});
+}, { //Encaminhando algumas configurações pro mongoose sobre o SpotSchema.virtuals
+    toJSON: { // Todas vez que um Spot for convertido em jason, ou seja o objeto acima
+        virtuals: true //  compute junto os virtuals
+    }
 
-module.exports = mongoose.model('Spot',SpotSchema);
+}
+);
+
+// Criado este parametro que não vai pro banco, apenas sera computado pelo JavaScript
+
+SpotSchema.virtual('thumbnail_url').get(function(){
+    // Rteornando a imagem, é preciso criar a rota que vai retornar a imagem
+    // Eu quem defino a URL
+    return 'http://localhost:3334/files/${this.thumbnail}' 
+})
+
+module.exports = mongoose.model('Spot',SpotSchema)/file/$this;

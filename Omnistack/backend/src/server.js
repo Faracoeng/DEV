@@ -4,6 +4,8 @@
 const express = require('express'); // require é para importar uma dependência externa
 //Importando o CORS
 const cors = require('cors');
+// Para criar a rota da imagem (virtuals)
+const path = require(path);
 
 
 // Importanto as rotas de rotas.js
@@ -31,6 +33,8 @@ app.use(cors());
 //express() por padrão não utiliza JSON, o trecho abaixo é como se fosse um plugin,
 // que serve para ele interpretar JSON e entregar nas requisições
 app.use(express.json());
+// Isso para retornar a imagem, que é um arquivo estatico, e como foi definido, esta dentro de '/files'
+app.use('/files', express.static(path.resolve(__dirname, '..','uploads')));
 app.use(routes);
 
 // Iniciar aplicação na porta 3333, apnas como teste

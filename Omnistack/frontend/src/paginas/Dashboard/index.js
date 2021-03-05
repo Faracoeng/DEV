@@ -1,11 +1,20 @@
 // Criar um componente REACT vazio
+//---------------------------------------
 // Assim que usuário acessar a página, necessário carregar informações
 // para isso utilizar {useEffect}
-import React, {useEffect} from 'react'; 
-//Iporar api
+//---------------------------------------
+//Como vao ser manipulados dados dentro do componente
+// Necessario controlar ele pelo estado como explicado 
+// na função login src/paginas/Login/index.js 
+
+import React, {useEffect, useState} from 'react'; 
+//Imporar api
 import api from '../../services/api';
 
 export default function Dashboard(){
+
+    //Implementando estado do componente com uma lista vazia como parametro no useState
+    const [spots, setSpots] = useState([])
 
     useEffect(() => {
         async function carregarListagem(){
@@ -21,6 +30,23 @@ export default function Dashboard(){
         }
         carregarListagem();
     },[]);
+    // Como vai retornar mais de um elemento
+    //NECESSARIO UTILIZAR O FRAGMENTE (TAG VAZIA)
+    return (
+        <>
+            <ul className="Listagem">
+                {spots.map(spot => (
+                    <li key={spot.id}>
+                        <header />
+                        <strong> {spot.nomeEmpresa}</strong>
+                        <spam> {spot.preco}</spam>               
 
-    return <h1>Dashboard</h1>
+                    </li>
+                ))}
+            
+            </ul>
+
+        </>
+    )
+
 }
