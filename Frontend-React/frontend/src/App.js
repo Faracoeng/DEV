@@ -6,17 +6,15 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+
+        <div className="content">
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Pressione o botão para exibir a <strong>Lista de sensores </strong> da estação.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <button className="btn" type="submit">Listar</button>
+        </div>
+        <noscript><a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer" > Learn React </a></noscript>
+
       </header>
     </div>
   );
