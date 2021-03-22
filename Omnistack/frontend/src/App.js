@@ -1,5 +1,5 @@
 // Toda infomação que é manipulada em um componente é mantida no ESTADO do componente
-// Conceito importante
+// Conceito importante lembrar
 // Importar junto com o React o useState Que vai ser responsável por criar ESTADOS dentro d aplicação
 
 import React from 'react'; //Sempre tem que importar React
