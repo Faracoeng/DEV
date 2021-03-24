@@ -2,6 +2,10 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  //Criando uma função em Javascript para solicitar a lista de sensores pro Node com metodo GET
+  function listarSensores(event){
+    console.log('lista de sensores exibida');
+  }
   return (
     <div className="App">
       <header className="App-header">
