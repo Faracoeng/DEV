@@ -1,0 +1,8 @@
+pytest
+Flask
+Flask-RESTful
+flask-sqlalchemy
+sqlalchemy
+pika
+requests
+uwsgi
