@@ -49,7 +49,7 @@ Este projeto em sua originalidade esta configurado no diretório ``` /var/www/no
 
 Estamos utilizando como Message Broker o RabbitMQ cujo protocolo de comunicação utilizado é o AMQP.
 
-Esa estrutura permite fazer a comunicação de forma ASSÍNCRONA da aplicação em Nodejs com outras aplicações, no caso a Estação Metereológica.
+Essa estrutura permite fazer a comunicação de forma ASSÍNCRONA da aplicação em Nodejs com outras aplicações, no caso a Estação Metereológica.
 
 A aplicação em Node encaminha as mensagens para a fila de mensagens do RabbitMQ, que pode ser consumida pela aplicação na outra ponta.
 
@@ -65,7 +65,7 @@ As mensagens são armazenadas em uma fila dentro do RabbitMQ, o limite deste arm
 
 ***Consumidor e Produtor não precisam estar no mesmo Host**
 
-É possivel se comunicar com o servidor RabbitMQ atarvés da porta 5672.
+É possivel se comunicar com o servidor RabbitMQ através da porta 5672.
 
 Para estabelecer conexão através de rede externa:
 
