@@ -24,3 +24,4 @@ EXPOSE 8000
 ENTRYPOINT ["/usr/local/bin/python"]
 
 CMD ["run.py"]
+
