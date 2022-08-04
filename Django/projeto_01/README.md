@@ -1,5 +1,7 @@
 ## Projeto introdutório de Django
 
+**Importante destacar que existe o Django, feito para construção de aplicações WEB, e o Django REST, que é um conjunto de ferramentas para a construção de APIs, ambos são escritos em python**
+
 ### Criado pasta do projeto:
 
 > mkdir try-django
@@ -11,6 +13,8 @@
 ### Para habilitar o ambiente virtual, basta digitar dentro do diretório *penv*:
 
 > source bin/activate
+
+O `source` é um comando interno de shell usado para executar o conteúdo do arquivo **activate** localizado dentro do diretório `bin` 
 
 
 ### Para desativar:
@@ -40,6 +44,18 @@ Lembrando que todas as execuções devem ser feitas dentro do ambiente virtual *
 
 > python -m django startproject trydjango .
 
-O nome escolhido **trydjango**, é onde ficam as configurações do projeto criado
+O nome escolhido **trydjango**, é onde ficam as configurações do projeto criado.
+
+### Servidor de desenvolvimento:
+
+> python manage.py runserver
+
+
+### Para as páginas, devem ser criadas Views
+
+Criar um arquivo `views.py`, dentro do diretório de configuração criado **trydjango**, que deverá ser responsável por renderizar as paginas HTML 
+
+
+
 
 
