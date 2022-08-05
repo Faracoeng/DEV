@@ -56,11 +56,11 @@ O nome escolhido **trydjango**, é onde ficam as configurações do projeto cria
 Criar um arquivo `views.py`, dentro do diretório de configuração criado **trydjango**, que deverá ser responsável por renderizar as paginas HTML 
 
 
-### Para criar componaente do blog do site
+### Para criar o componente do blog do site
 
 > python manage.py startapp blog
 
-
+Após criar é necessário adicionar este módulo "blog" em **INSTALLED_APPS**, no arquivo **settings.py**, para que o Django reconheça a estrutura no projeto.
 
 
 

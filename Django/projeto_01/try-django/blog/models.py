@@ -4,5 +4,5 @@ from django.db import models
 
 class Blog(models.Model):
     #Armazenando artigos do blog
-    title = 
-    content = 
+    title = models.TextField()
+    content = models.TextField()
