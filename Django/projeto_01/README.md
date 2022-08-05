@@ -62,5 +62,13 @@ Criar um arquivo `views.py`, dentro do diretório de configuração criado **try
 
 Após criar é necessário adicionar este módulo "blog" em **INSTALLED_APPS**, no arquivo **settings.py**, para que o Django reconheça a estrutura no projeto.
 
+**Muito Importante!!!** : Sempre que algo em *models.py* é necessário recarregar o projeto com os comandos:
+
+> python manage.py makemigrations
+
+e
+
+> python manage.py migrate
+
 
 
