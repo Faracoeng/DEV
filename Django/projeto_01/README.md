@@ -56,6 +56,11 @@ O nome escolhido **trydjango**, é onde ficam as configurações do projeto cria
 Criar um arquivo `views.py`, dentro do diretório de configuração criado **trydjango**, que deverá ser responsável por renderizar as paginas HTML 
 
 
+### Para criar componaente do blog do site
+
+> python manage.py startapp blog
+
+
 
 
 
