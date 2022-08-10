@@ -7,4 +7,6 @@
 
 **backend**: Feito em node.
 
+**Base de dados**: Será utilizado o mongoDB.
+
 Ambos serão estruturados em containers, para serem coordenados pelo docker, através do arquivo de configuração `docker-compose.yml`
