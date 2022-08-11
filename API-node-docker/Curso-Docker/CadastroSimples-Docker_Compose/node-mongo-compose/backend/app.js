@@ -8,10 +8,12 @@ const server = express()
 // Mongoose disponivel a partir do node restful
 const mongoose = restful.Mongoose
 
-// Database
 
+
+// Database
 mongoose.Promise = global.Promise
 
+//Essa conexão será referenciada no dockerfile
 mongoose.connect('mongodb://db/mydb')
 
 //Teste get na raiz retorna a string 'Backend'
