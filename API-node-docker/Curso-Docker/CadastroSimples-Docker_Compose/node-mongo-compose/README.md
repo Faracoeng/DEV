@@ -10,3 +10,8 @@
 **Base de dados**: Será utilizado o mongoDB.
 
 Ambos serão estruturados em containers, para serem coordenados pelo docker, através do arquivo de configuração `docker-compose.yml`
+
+
+#### Subindo todos os containers
+
+> `docker-compose up`
