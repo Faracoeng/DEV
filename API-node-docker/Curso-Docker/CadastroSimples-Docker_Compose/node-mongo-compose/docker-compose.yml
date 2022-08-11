@@ -1,3 +1,27 @@
 version: '3'
+
+# Serão criados 3 services:
+# db, backend e o frontend
 services:
-  db
+  db:
+    image: mongo:3.4
+
+  backend:
+    image: node:8.1
+    volumes:
+      #Mapeando o diretorio backend para dentro de 'backend' dentro da imagem
+      - ./backend:/backed 
+    ports:
+      - 3000:3000
+    # Executar o bash abaixo dentro da imagem
+    # Entra no diretorio, instala as dependências e roda o node chamando o app.js  
+    command: bash -c "cd /backend && npm i && node app"
+
+  frontend:
+    image: nginx:1.13
+    volumes: 
+      #Mapeando o frontend para pasta compartilhada da imagem
+      - .frontend:/usr/share/nginx/html/
+    ports:
+      - 80:80 
+
