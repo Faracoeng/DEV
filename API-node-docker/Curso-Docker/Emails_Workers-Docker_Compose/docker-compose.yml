@@ -18,6 +18,7 @@ services:
     image: nginx:1.13
     volumes:
       #Site
-      - ./web:/uer/share/nginx/html
+      - ./web:/usr/share/nginx/html
+    ports: 
       - 80:80
     
