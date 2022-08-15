@@ -14,4 +14,10 @@ services:
       # Mapeando a pasta scripts daqui, para a pasta scripts dentro do container
       - ./scripts:/scripts
       - ./scripts/init.sql:/docker-entrypoint-initdb/init.sql
+  frontend:
+    image: nginx:1.13
+    volumes:
+      #Site
+      - ./web:/uer/share/nginx/html
+      - 80:80
     
