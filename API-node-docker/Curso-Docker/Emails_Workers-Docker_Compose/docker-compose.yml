@@ -16,6 +16,8 @@ services:
       # Mapeando a pasta scripts daqui, para a pasta scripts dentro do container
       - ./scripts:/scripts
       - ./scripts/init.sql:/docker-entrypoint-initdb/init.sql
+    networks:
+      - banco
   frontend:
     image: nginx:1.13
     volumes:
@@ -26,6 +28,10 @@ services:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
     ports: 
       - 80:80
+    
+    networks:
+      - web
+
   app:
     image: python:3.6
     volumes:
